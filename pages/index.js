@@ -11,7 +11,7 @@ const Index = () => {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
-        setFilteredUsers(data); // Set filteredUsers 
+        setFilteredUsers(data); // Set filteredUsers
       })
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
@@ -102,14 +102,22 @@ const Index = () => {
                             wordWrap: "break-word",
                           }}
                         >
-                          <img
-                            className="px-1"
-                            src="assets/web.svg"
-                            alt="Website"
-                          />
-                          {user.website}
+                          <a
+                            href={`http://${user.website}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none" }}
+                          >
+                            <img
+                              className="px-1"
+                              src="assets/email.svg"
+                              alt="Website"
+                            />
+                            {user.website}
+                          </a>
                         </div>
-                        <img  src="assets/vector.svg" />
+
+                        <img src="assets/vector.svg" />
 
                         <div
                           className="col"
@@ -120,12 +128,19 @@ const Index = () => {
                             wordWrap: "break-word",
                           }}
                         >
-                          <img
-                            className="px-1"
-                            src="assets/email.svg"
-                            alt="Website"
-                          />
-                          {user.website}
+                          <a
+                            href={`http://${user.website}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none" }}
+                          >
+                            <img
+                              className="px-1"
+                              src="assets/web.svg"
+                              alt="web"
+                            />
+                            {user.website}
+                          </a>
                         </div>
                       </div>
                     </div>
