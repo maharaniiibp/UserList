@@ -11,14 +11,15 @@ const Index = () => {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
-        setFilteredUsers(data); // Set filteredUsers to all users initially
+        setFilteredUsers(data); // Set filteredUsers 
       })
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
 
   const handleSearch = (value) => {
-    setSearch(value); // Update the search value
-    // Filter users based on the search value
+    setSearch(value); // Update search value
+
+    // Filter berdasarkan users
     const filtered = users.filter((user) =>
       user.name.toLowerCase().includes(value.toLowerCase())
     );
@@ -96,7 +97,7 @@ const Index = () => {
                           className="col"
                           style={{
                             color: "#3A7CFD",
-                            fontSize: 12,
+                            fontSize: 14,
                             fontFamily: "Josefin Sans, sans-serif",
                             wordWrap: "break-word",
                           }}
@@ -104,6 +105,24 @@ const Index = () => {
                           <img
                             className="px-1"
                             src="assets/web.svg"
+                            alt="Website"
+                          />
+                          {user.website}
+                        </div>
+                        <img  src="assets/vector.svg" />
+
+                        <div
+                          className="col"
+                          style={{
+                            color: "#3A7CFD",
+                            fontSize: 14,
+                            fontFamily: "Josefin Sans, sans-serif",
+                            wordWrap: "break-word",
+                          }}
+                        >
+                          <img
+                            className="px-1"
+                            src="assets/email.svg"
                             alt="Website"
                           />
                           {user.website}
